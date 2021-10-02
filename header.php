@@ -18,7 +18,7 @@ if(strpos($_SERVER['REQUEST_URI'], "/search.php")  !== false){
             ?>
 
             <a class='headerlink' href="/">Search</a>
-            <a class='headerlink' href="/">Recommendations</a>
+            <a class='headerlink' href="/search.php?q=#recommendations">Recommendations</a>
             <a class='headerlink' href="/about.php">Published-here</a>
             <a class='headerlink' href="/about.php">About</a>
             

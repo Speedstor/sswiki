@@ -12,26 +12,35 @@ $search_query = $_GET['q'];
 require_once($_SERVER['DOCUMENT_ROOT']."/includes/dbh.inc.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/.topic/jsonPhp.php");
 
-$title_match_rows = [];
-$result = mysqli_query($conn, "SELECT * FROM `all_topics` where `topic_title` like '%".$search_query."%' ORDER BY `last_edit` DESC;");
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-    $title_match_rows[] = $row;
-}
+$result = mysqli_query($conn, "INSERT INTO search_log(`query`, `datetime`) VALUES ('".$search_query."', '".date("Y-m-d H:i:s")."');");
+while (mysqli_next_result($conn));
 
+$title_match_rows = [];
 $description_match_rows = [];
-$result = mysqli_query($conn, "SELECT * FROM `all_topics` where `description` like '%".$search_query."%' ORDER BY `last_edit` DESC;");
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-    $description_match_rows[] = $row;
+if($search_query == "#recommendations"){
+    $title_match_rows = getArray_fromMysql("all_topics", $orderedBy = "popularity", $limit = 10);
+}else{
+    $result = mysqli_query($conn, "SELECT * FROM `all_topics` where `topic_title` like '%".$search_query."%' ORDER BY `last_edit` DESC;");
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        $title_match_rows[] = $row;
+    }
+    
+    $result = mysqli_query($conn, "SELECT * FROM `all_topics` where `description` like '%".$search_query."%' ORDER BY `last_edit` DESC;");
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        $description_match_rows[] = $row;
+    }
 }
 
 
 $fuzzyResultsNum = count($description_match_rows) - count($title_match_rows);
 if($fuzzyResultsNum < 0) $fuzzyResultsNum = 0;
 
+
 ?>
 
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 <script src="/js/searchBar.js" type="text/javascript"></script>
+<script src="/js/searchPage.js" type="text/javascript"></script>
 
 <script src="https://kit.fontawesome.com/1a1c0507f3.js" crossorigin="anonymous"></script>
 
@@ -42,9 +51,16 @@ if($fuzzyResultsNum < 0) $fuzzyResultsNum = 0;
             <div>
                 <h5 class="h-small">💠 Search Results</h5>
                 <div class="input-wrap mainSearch-wrap">
-                    <input type="text" id="mainSearch" value="<?php echo $search_query; ?>" class="input-text input-wrapped mainSearch" autocomplete="off"/>
-                    <button id="clearSearchInput" class="btn btn-icon mainSearch-go"><i class="fas fa-times"></i></button>
-                    <button onclick="redirectSearch();" class="btn btn-icon mainSearch-go"><i class="fas fa-search"></i></button>
+                    <input type="text" id="mainSearch" class="input-text input-wrapped mainSearch" autocomplete="off"/>
+                    <script>
+                        window.addEventListener("load", () => {
+                            document.getElementById("mainSearch").value = "<?php echo $search_query; ?>";
+                        }, true);
+                    </script>
+                    <div style="display: flex;">
+                        <button id="clearSearchInput" class="btn btn-icon mainSearch-go"><i class="fas fa-times"></i></button>
+                        <button onclick="redirectSearch();" class="btn btn-icon mainSearch-go"><i class="fas fa-search"></i></button>
+                    </div>
                 </div>
             </div>
             <div style="display: flex; flex-direction: column; justify-content: flex-end;">
@@ -59,7 +75,36 @@ if($fuzzyResultsNum < 0) $fuzzyResultsNum = 0;
 
 
                 <?php
+                if(count($title_match_rows) <= 0){
+                    echo '
+                    
+                    <div class="box item resultItem" style="border: none; margin-top: 46px; margin-bottom: 38px;">
+                        <div class="item-margin" style="height: 190px; background: url(\'/src/dna_loading.gif\'); display: flex; align-items: center; background-size: contain; background-position: center; justify-content: center; background-repeat: no-repeat;">
+                        <!-- <img src="/src/dna_loading.gif" height="190" style="width: unset"></img> -->
+                            <h4 style="line-height: 28px; background: #808080eb; padding: 11px 20px; color: white; display: inline-block; width: unset; height: unset; text-align: center;">
+                                Sorry!! We still don\'t have relevant content for your <br/>search. Please try again in a couple months. 😖
+                            </h4>
+                        </div>
+                    </div>
+                    
+                    <div class="box item resultItem" style="margin-bottom: 20px">
+                        <div class="item-margin">
 
+                            <div class="divider" style="margin-top: -13px; height: 8px;"></div>
+                            <p class="" style="color: darkgrey; font-size: 12px; text-align: center; margin: 0px; font-family: sans-serif;"> This site is very new, and still in development.
+                            In fact, it has only been up for <br/><span style="text-decoration: underline;" id="serverTimeSince" onload="this.innerText=timeSince(new Date(\'10-1-2021\'));"></span></p>
+                            <div class="spacer small"></div>
+                        </div>
+                    </div>
+                    <div class="spacer small"></div>
+                    <div class="separator"></div>
+                    <h3 style="text-align: center;">In the meantime, you can check out our <br/> more popular web aggregates 👇</h3>
+                    <div class="separator"></div>
+
+                    ';
+
+                    $title_match_rows = getArray_fromMysql("all_topics", $orderedBy = "popularity", $limit = 4);
+                }
                 foreach($title_match_rows as &$item){
                     echo '
                     <div class="box item resultItem hover-grey" onclick="window.location.href=\'http://selfstudywiki.com/topic/\'+\''.$item["topicname"].'\'.replace(/([a-z])([A-Z])/g, \'$1-$2\').trim();">
@@ -108,6 +153,7 @@ if($fuzzyResultsNum < 0) $fuzzyResultsNum = 0;
                         </div>
                     </div>';
                 }
+                
                 ?>
 
             </div>

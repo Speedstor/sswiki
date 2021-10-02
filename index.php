@@ -16,9 +16,9 @@ body{
         <p style="margin-top: 16px;">Congregate World's Learning Platforms<br/><span class="sub">An open-sourced effort</span></p>
     </div>
     <div>
-        <a href="" class="spaced">About</a>
-        <a href="" class="spaced">Published-here</a>
-        <a href="" class="spaced">Recomendations</a>
+        <a href="/about.php" class="spaced">About</a>
+        <a href="/p/" class="spaced">Published-here</a>
+        <a href="/search.php?q=#recommendations" class="spaced">Recomendations</a>
     </div>
 </div>
 
