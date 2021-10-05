@@ -9,7 +9,7 @@
     <div class="box-margin">
         <div class="searchHeader">
             <div style="display: flex;">
-                <h1 class="thin no-margin"><small>Topic: </small><input oninput="this.size = this.value.length;"  id="input_topic_title" style="font-size: 20px;" type="text"/></h1>
+                <h1 class="thin no-margin"><small>Topic: </small><input oninput="this.size = this.value.length;" <?php if(isset($data)) echo "value='".$data["info"]["topic_title"]."'"; ?> id="input_topic_title" style="font-size: 20px;" type="text"/></h1>
                 <label style="color: red; margin-top: 20px; margin-left: 9px;"><i class="fas fa-star-of-life"></i> Required</label>
             </div>
             <div style="display: flex; flex-direction: column; justify-content: flex-end;">

@@ -1,7 +1,5 @@
 <?php
-
 //before anything check for login
-
 session_start();
 
 function kick(){
@@ -19,12 +17,8 @@ require_once($_SERVER['DOCUMENT_ROOT']."/includes/dbh.inc.php");
 
 $result = mysqli_query($conn, "SELECT * FROM authority WHERE user_id=".$_SESSION['userId']);
 if(!$result) kick();
-
 $result = mysqli_fetch_array($result);
-
 if($result["access_level"] != 44) kick();
-
-print_r($_POST);
 
 if(!isset($_POST["query"]) || !isset($_POST["secret4356"])){
     http_response_code(400);

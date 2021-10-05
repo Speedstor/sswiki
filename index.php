@@ -18,7 +18,7 @@ body{
     <div>
         <a href="/about.php" class="spaced">About</a>
         <a href="/p/" class="spaced">Published-here</a>
-        <a href="/search.php?q=#recommendations" class="spaced">Recomendations</a>
+        <a href="/search.php?q=%23recommendations" class="spaced">Recomendations</a>
     </div>
 </div>
 

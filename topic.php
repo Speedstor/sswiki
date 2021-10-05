@@ -25,9 +25,6 @@ if(count($pageParams) > 3 && $pageParams[3] == "json"){
 
 require "head.php";
 require "header.php";
-
-// print_r($data)
-
 ?>
 
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>

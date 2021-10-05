@@ -10,7 +10,10 @@
                 <h1 class="thin no-margin"><small>Topic: </small><?php echo $data["info"]["topic_title"]?></h1>
             </div>
             <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-                <a class="remarks" style="float: right; margin-bottom: 4px;" href="">contribute</a>
+                <form action="/includes/pageContribute.inc.php" method="post">
+                    <input name="topicname" value="<?php echo $topicname; ?>" style="display: none"/>
+                    <button type="submit" name="submit-from-page" class="btn-icon remarks" style="float: right; margin-bottom: 4px;" href="">contribute</button>
+                </form>
                 <p style="font-size: 13px; margin: 0px;">Last manual input: <span id="last_input_date"><?php echo $data["info"]["last_edit"]; ?></span></p>
             </div>
         </div>

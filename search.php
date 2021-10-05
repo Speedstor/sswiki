@@ -51,12 +51,7 @@ if($fuzzyResultsNum < 0) $fuzzyResultsNum = 0;
             <div>
                 <h5 class="h-small">💠 Search Results</h5>
                 <div class="input-wrap mainSearch-wrap">
-                    <input type="text" id="mainSearch" class="input-text input-wrapped mainSearch" autocomplete="off"/>
-                    <script>
-                        window.addEventListener("load", () => {
-                            document.getElementById("mainSearch").value = "<?php echo $search_query; ?>";
-                        }, true);
-                    </script>
+                    <input type="text" id="mainSearch" value="<?php echo $search_query; ?>" class="input-text input-wrapped mainSearch" autocomplete="off"/>
                     <div style="display: flex;">
                         <button id="clearSearchInput" class="btn btn-icon mainSearch-go"><i class="fas fa-times"></i></button>
                         <button onclick="redirectSearch();" class="btn btn-icon mainSearch-go"><i class="fas fa-search"></i></button>
