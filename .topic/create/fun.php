@@ -7,7 +7,7 @@
         $index = 0;
         foreach($data["fun"] as &$item){
             echo '<li><input value="'.$item["title"].'" id="fun_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="fun_title" class="fun_title bottom_input auto_remove_input existed_item" type="text"/>
-            <button id="fun_link_'.$index.'" data-id="'.$index.'" class="btn btn-icon fun_link store_link_btn existed_item" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;" ';
+            <button id="fun_link_'.$index.'" data-id="'.$index.'" class="btn btn-icon fun_link store_link_btn existed_item '.getLinkCssClass($item["link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;" ';
     
             if($item["link"]) echo "data-link=\"".$item["title"]."\"  data-original=\"".$item["title"]."\"";
             else echo "data-original=\"\"";

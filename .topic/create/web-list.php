@@ -22,9 +22,15 @@
             $set_values_javascript = $set_values_javascript."document.getElementById('".$web_list_list_type.'_website_'.$index."').checked = true;";
         }
         
-
-        if($item["main_link"] == "NULL" || $item["main_link"] == null ||  $item["main_link"] == false) $item["main_link"] = "";
-        if($item["picture_link"] == "NULL" || $item["picture_link"] == null ||  $item["picture_link"] == false) $item["picture_link"] = "";
+        $main_link_css = "field_filled";
+        if($item["main_link"] == "NULL" || $item["main_link"] == null ||  $item["main_link"] == false){
+            $item["main_link"] = "";
+            $main_link_css = "field_empty";
+        }
+        if($item["picture_link"] == "NULL" || $item["picture_link"] == null ||  $item["picture_link"] == false) {
+            $item["picture_link"] = "";
+            $main_link_css = "field_empty";
+        }
 
 
         echo '
@@ -38,7 +44,7 @@
                     <label><input type="radio" id="'.$web_list_list_type.'_book_'.$index.'" data-id="'.$index.'" name="'.$web_list_list_type.'_is_book_'.$index.'" value="book"/>Book</label>
                 </div>
                 <div class="indent">
-                    <h3 class="thin no-margin"><input type="text" id="'.$web_list_list_type.'_title_'.$index.'" data-id="'.$index.'" value="'.$item["title"].'" class="existed_item"/><button id="'.$web_list_list_type.'_mainlink_'.$index.'" data-id="'.$index.'" class="btn btn-icon store_link_btn '.$web_list_list_type.'_mainlink" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></h3>
+                    <h3 class="thin no-margin"><input type="text" id="'.$web_list_list_type.'_title_'.$index.'" data-id="'.$index.'" value="'.$item["title"].'" class="existed_item"/><button id="'.$web_list_list_type.'_mainlink_'.$index.'" data-id="'.$index.'" original-data="'.$item["main_link"].'"  data-link="'.$item["main_link"].'" class="btn btn-icon store_link_btn '.$web_list_list_type.'_mainlink '.getLinkCssClass($item["main_link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></h3>
                     <ul class="plain" style="columns: 2; padding-top: 8px;">';
 
                     
@@ -49,12 +55,12 @@
                 foreach($subCateg as &$subSite){
                     if($subSite->link == "false") $subSite->link = "";
 
-                    echo '<li class="topic-sublink"><input id="'.$web_list_list_type.'_subtitle_'.$index.'_'.$index_sitemap.'" value="'.$subSite->title.'" data-original="'.$subSite->title.'" data-id='.$index.' class="'.$web_list_list_type.'_subtitle existed_item" type="text"/> <button id="'.$web_list_list_type.'_sublink_'.$index.'_'.$index_sitemap.'" data-id="'.$index.'" data-original="'.$subSite->link.'" data-link="'.$subSite->link.'" class="btn btn-icon store_link_btn '.$web_list_list_type.'_sublink existed_item" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></li>';
+                    echo '<li class="topic-sublink"><input id="'.$web_list_list_type.'_subtitle_'.$index.'_'.$index_sitemap.'" value="'.$subSite->title.'" data-original="'.$subSite->title.'" data-id='.$index.' class="'.$web_list_list_type.'_subtitle existed_item" type="text"/> <button id="'.$web_list_list_type.'_sublink_'.$index.'_'.$index_sitemap.'" data-id="'.$index.'" data-original="'.$subSite->link.'" data-link="'.$subSite->link.'" class="btn btn-icon store_link_btn '.$web_list_list_type.'_sublink existed_item '.getLinkCssClass($subSite->link).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></li>';
                     $index_sitemap++;
                 }
             }
             while($index_sitemap < 6){
-                echo '<li class="topic-sublink"><input id="'.$web_list_list_type.'_subtitle_'.$index.'_'.$index_sitemap.'" value="" data-original="" data-id='.$index.' class="'.$web_list_list_type.'_subtitle existed_item" type="text"/> <button id="'.$web_list_list_type.'_sublink_'.$index.'_'.$index_sitemap.'" data-id="'.$index.'" data-original="" data-link="" class="btn btn-icon store_link_btn '.$web_list_list_type.'_sublink existed_item" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></li>';
+                echo '<li class="topic-sublink"><input id="'.$web_list_list_type.'_subtitle_'.$index.'_'.$index_sitemap.'" value="" data-original="" data-id='.$index.' class="'.$web_list_list_type.'_subtitle existed_item" type="text"/> <button id="'.$web_list_list_type.'_sublink_'.$index.'_'.$index_sitemap.'" data-id="'.$index.'" data-original="" data-link="" class="btn btn-icon store_link_btn '.$web_list_list_type.'_sublink existed_item field_empty" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></li>';
                 $index_sitemap++;
             }
 

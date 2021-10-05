@@ -526,3 +526,13 @@ p a{
 }
 
 
+.field_filled{
+    background: rgb(93, 81, 160);
+    color: rgb(206, 200, 200);
+
+}
+
+.field_empty{
+    background: transparent;
+    color: rgb(49, 133, 189);
+}

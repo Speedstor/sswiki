@@ -17,3 +17,8 @@ function intToTrucatedStr($n) {
 
     return number_format($n);
 }
+
+function getLinkCssClass($link){
+    if($link == "NULL" || $link == null ||  $link == false || $link == "") return "field_empty";
+    else return "field_filled";
+}

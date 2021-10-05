@@ -350,10 +350,9 @@ function setUrlFromModel(){
         urlModel_input.setAttribute("data-setting-for", "")
         setFor.setAttribute("data-link", urlModel_input.value)
         urlModel_input.value = "";
-
-        setFor.style.background = "#5d51a0";
-        setFor.style.color = "#cec8c8";
-
+        
+        setFor.classList.remove("field_empty");
+        setFor.classList.add("field_filled");
     }
     escapeUrlModel();
 }
@@ -365,8 +364,8 @@ function setEmptyFromModel(){
     setFor.setAttribute("data-link", "")
     urlModel_input.value = "";
 
-    setFor.style.background = "transparent";
-    setFor.style.color = "rgb(49, 133, 189)";
+    setFor.classList.add("field_empty");
+    setFor.classList.remove("field_filled");
 
     escapeUrlModel();
 }

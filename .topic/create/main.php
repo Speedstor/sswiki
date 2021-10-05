@@ -1,5 +1,5 @@
 <?php
-
+    require_once($_SERVER['DOCUMENT_ROOT']."/.topic/helpers.php");
 ?>
 
 <script src="/.topic/create/js/create.js" type="text/javascript"></script>
@@ -53,7 +53,7 @@
             <div>
                 <div class="box" style="width: 321px;">
                     <div class="box-margin">
-                        <a style="margin: 0px" class="remarks" href="">filter</a>
+                        <!-- <a style="margin: 0px" class="remarks" href="">filter</a> -->
                         <div>
                             <h4 style="margin: 0px; display: inline-block;" class="thin">Brief Description</h4>
                             <label style="color: red; margin-left: 9px;"><i class="fas fa-star-of-life"></i> Required</label>
