@@ -50,10 +50,8 @@ function previewAndSave(){
     var previewJson = {
         "info": {
             "topicname": "AnotherTest",
-            "topic_title": "another test",
             "last_edit": "2000-09-30 14:51:34",
             "popularity": "10",
-            "description": "to teach, to leanr, is to fly",
             "tutorial_finished": "0"
         },
         "tutorial": {},
@@ -67,13 +65,13 @@ function previewAndSave(){
         "rateHistory": {}
     }
     
-    //all new
     let query = ""
     var topicTitle = document.getElementById("input_topic_title").value;
     var description = document.getElementById("textarea_topic_description").value;
     if(document.getElementById("input_topic_title").classList.contains("existed_item") && window.location.href.includes("/edit.php")){
         query += `edit\tinfo\t${topicTitle}\t${description};`;
     }else{
+        //all new
         window.create_topic = true;
         if(topicTitle == "" || description == ""){
             document.getElementById("input_topic_title").style.border = "1px solid red";
@@ -173,9 +171,9 @@ function getContainerList(category, topicname, previewJson){
             query += `insertdb\t${category}\t${topicname}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
         }else{
             if(focusedElem.classList.contains("existed_item")){
-                if(any_item_changed) query += `edit\t${category}\t${topicname}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
+                if(any_item_changed) query += `edit\t${category}\t${topicname}\t${specialId}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
             }else{
-                query += `editinsert\t${category}\t${topicname}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
+                query += `editinsert\t${category}\t${topicname}\t${specialId}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
             }
         }
     }
@@ -219,11 +217,11 @@ function getList(category, topicname, previewJson){
         }else{
             console.log("hitted")
             if(focusedElem.classList.contains("existed_item")){
-                if(any_item_changed) query += `edit\t${category}\t${topicname}\t${title}\t${link};`;
+                if(any_item_changed) query += `edit\t${category}\t${topicname}\t${specialId}\t${title}\t${link};`;
             }else{
                 console.log("editinsert1")
 
-                query += `editinsert\t${category}\t${topicname}\t${title}\t${link};`;
+                query += `editinsert\t${category}\t${topicname}\t${specialId}\t${title}\t${link};`;
             }
         }
     }
