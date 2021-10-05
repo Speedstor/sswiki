@@ -45,7 +45,7 @@
                         <label><input type="radio" id="'.$web_list_list_type.'_book_'.$index.'" data-id="'.$index.'" name="'.$web_list_list_type.'_is_book_'.$index.'" value="book"/>Book</label>
                     </div>
                     <div class="indent">
-                        <h3 class="thin no-margin"><input type="text" id="'.$web_list_list_type.'_title_'.$index.'" data-id="'.$index.'" value="'.$item["title"].'" class="existed_item"/><button id="'.$web_list_list_type.'_mainlink_'.$index.'" data-id="'.$index.'" original-data="'.$item["main_link"].'"  data-link="'.$item["main_link"].'" class="btn btn-icon store_link_btn '.$web_list_list_type.'_mainlink '.getLinkCssClass($item["main_link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></h3>
+                        <h3 class="thin no-margin"><input type="text" id="'.$web_list_list_type.'_title_'.$index.'" data-id="'.$index.'" value="'.$item["title"].'" data-original="'.$item["title"].'" class="existed_item"/><button id="'.$web_list_list_type.'_mainlink_'.$index.'" data-id="'.$index.'" data-original="'.$item["main_link"].'"  data-link="'.$item["main_link"].'" class="btn btn-icon store_link_btn '.$web_list_list_type.'_mainlink '.getLinkCssClass($item["main_link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></h3>
                         <ul class="plain" style="columns: 2; padding-top: 8px;">';
     
                         
@@ -70,7 +70,7 @@
                 </div>
                 </div>
                 <div class="" style="display: flex; align-content: center; justify-content: center; flex-direction: column; height: 198px; width: 258px; border: 1px solid grey; padding: 15px; box-sizing: border-box;">
-                <div style="display: flex;"><i class="fas fa-link" style="margin-right: 4px; color: rgb(49, 133, 189);"></i><input type="text" id="'.$web_list_list_type.'_picturelink_'.$index.'" value="'.$item["picture_link"].'" data-id="'.$index.'" class="existed_item"/></div>
+                <div style="display: flex;"><i class="fas fa-link" style="margin-right: 4px; color: rgb(49, 133, 189);"></i><input type="text" id="'.$web_list_list_type.'_picturelink_'.$index.'" value="'.$item["picture_link"].'" data-original="'.$item["picture_link"].'" data-id="'.$index.'" class="existed_item"/></div>
                 <p style="text-align: center;">~ or ~</p>
                 <button class="btn btn-green">Upload <i class="fas fa-upload"></i></button>
                 </div>

@@ -68,237 +68,32 @@ function previewAndSave(){
     }
     
     //all new
+    let query = ""
     var topicTitle = document.getElementById("input_topic_title").value;
     var description = document.getElementById("textarea_topic_description").value;
-    if(topicTitle == "" || description == ""){
-        document.getElementById("input_topic_title").style.border = "1px solid red";
-        document.getElementById("textarea_topic_description").style.border = "1px solid red";
-        return "Title and Description are required";
+    if(document.getElementById("input_topic_title").classList.contains("existed_item") && window.location.href.includes("/edit.php")){
+        query += `edit\tinfo\t${topicTitle}\t${description};`;
+    }else{
+        window.create_topic = true;
+        if(topicTitle == "" || description == ""){
+            document.getElementById("input_topic_title").style.border = "1px solid red";
+            document.getElementById("textarea_topic_description").style.border = "1px solid red";
+            return "Title and Description are required";
+        }
+        
+        query += `createtopicsuite\t${topicTitle}\t${description};`;
     }
-
-    var query = `createtopicsuite\t${topicTitle}\t${description};`;
     previewJson.info.topic_title = topicTitle;
     previewJson.info.description = description;
     
-
     
-    var tutorialElems = document.getElementsByClassName("tutorial_title");
-    for(var i = 0; i < tutorialElems.length; i++){
-        var focusedElem = tutorialElems[i];
-        if(!focusedElem.hasAttribute("data-id")) continue;
-        var specialId = focusedElem.getAttribute("data-id");
-        var category = "tutorial";
+    query += getList("tutorial", generatedTopicName, previewJson);
+    query += getList("tips", generatedTopicName, previewJson);
+    query += getList("fun", generatedTopicName, previewJson);
+    query += getList("toolbox", generatedTopicName, previewJson);
 
-
-        var title = focusedElem.value;
-        var link = document.getElementById(category+"_link_"+specialId).getAttribute("data-link");
-        if(link == 0 || link == "" || link == null) link = "NULL";
-        if(title == "") continue;
-        var order = i+1;
-        previewJson[category][i] = {
-            "id": i,
-            "title": title,
-            "whatId": "TEST_tutorial_4",
-            "edit_increment": "0",
-            "link": link,
-            "compiled_rating": "10",
-            "positive_rating": "0",
-            "negative_rating": "0",
-            "rating_id": "19",
-            "order": order
-        }
-        query += `insertdb\ttutorial\t${generatedTopicName}\t${title}\t${link}\t${order};`;
-    }
-
-    var tipsElems = document.getElementsByClassName("tips_title");
-    for(var i = 0; i < tipsElems.length; i++){
-        var focusedElem = tipsElems[i];
-        if(!focusedElem.hasAttribute("data-id")) continue;
-        var specialId = focusedElem.getAttribute("data-id");
-        var category = "tips";
-
-
-        var title = focusedElem.value;
-        var link = document.getElementById(category+"_link_"+specialId).getAttribute("data-link");
-        if(link == 0 || link == "" || link == null) link = "NULL";
-        if(title == "") continue;
-        previewJson[category][i] = {
-            "id": i,
-            "title": title,
-            "whatId": "TEST_tutorial_4",
-            "edit_increment": "0",
-            "link": link,
-            "compiled_rating": "10",
-            "positive_rating": "0",
-            "negative_rating": "0",
-            "rating_id": "19"
-        }
-        query += `insertdb\t${category}\t${generatedTopicName}\t${title}\t${link};`;
-    }
-
-    var funElems = document.getElementsByClassName("fun_title");
-    for(var i = 0; i < funElems.length; i++){
-        var focusedElem = funElems[i];
-        if(!focusedElem.hasAttribute("data-id")) continue;
-        var specialId = focusedElem.getAttribute("data-id");
-        var category = "fun";
-
-
-        var title = focusedElem.value;
-        var link = document.getElementById(category+"_link_"+specialId).getAttribute("data-link");
-        if(link == 0 || link == "" || link == null) link = "NULL";
-        if(title == "") continue;
-        previewJson[category][i] = {
-            "id": i,
-            "title": title,
-            "whatId": "TEST_tutorial_4",
-            "edit_increment": "0",
-            "link": link,
-            "compiled_rating": "10",
-            "positive_rating": "0",
-            "negative_rating": "0",
-            "rating_id": "19"
-        }
-        query += `insertdb\t${category}\t${generatedTopicName}\t${title}\t${link};`;
-    }
-
-    var toolboxElems = document.getElementsByClassName("toolbox_title");
-    for(var i = 0; i < toolboxElems.length; i++){
-        var focusedElem = toolboxElems[i];
-        if(!focusedElem.hasAttribute("data-id")) continue;
-        var specialId = focusedElem.getAttribute("data-id");
-        var category = "toolbox";
-
-
-        var title = focusedElem.value;
-        var link = document.getElementById(category+"_link_"+specialId).getAttribute("data-link");
-        if(link == 0 || link == "" || link == null) link = "NULL";
-        if(title == "") continue;
-        previewJson[category][i] = {
-            "id": i,
-            "title": title,
-            "whatId": "TEST_tutorial_4",
-            "edit_increment": "0",
-            "link": link,
-            "compiled_rating": "10",
-            "positive_rating": "0",
-            "negative_rating": "0",
-            "rating_id": "19"
-        }
-
-        query += `insertdb\t${category}\t${generatedTopicName}\t${title}\t${link};`;
-    }
-
-    var generalContainers = document.getElementsByClassName("general_container")
-    for(var i = 0; i < generalContainers.length; i++){
-        var focusedElem = generalContainers[i];
-        var specialId = focusedElem.getAttribute("data-id");
-        var category = "general"
-
-        console.log("here")
-
-        var title = document.getElementById(category+"_title_"+specialId).value;
-        console.log(title);
-        if(title == "") continue;
-        var mainlink = document.getElementById(category+"_mainlink_"+specialId).getAttribute("data-link");
-        if(mainlink == 0 || mainlink == "" || mainlink == null) mainlink = "NULL";
-        console.log("picture link: "+category+"_picturelink_"+specialId);
-        var picturelink = document.getElementById(category+"_picturelink_"+specialId).value;
-
-
-        var siteMapJson = "[";
-        for(var a = 0; a < 6; a++){
-            var subtitle_id = category+"_subtitle_"+specialId+"_"+a;
-            var sublink_id = category+"_sublink_"+specialId+"_"+a;
-
-            var subtitle = document.getElementById(subtitle_id).value;
-            var link = document.getElementById(sublink_id).getAttribute("data-link");
-            if(subtitle == "") continue;
-            if(link == 0 || link == "" || link == null) link = "false";
-
-            siteMapJson += `{"title": "${subtitle}", "link": "${link}"},`;
-        }
-        if(siteMapJson.length > 1) siteMapJson = siteMapJson.substring(0, siteMapJson.length - 1) + "]";
-        else siteMapJson = "[]";
-
-
-        var is_book = document.querySelector('input[name="'+category+'_is_book_'+specialId+'"]:checked').value;
-        if(is_book){
-            if(is_book == "book") is_book = 1;
-            else is_book = 0;
-        }else{
-            is_book = 0;
-        }
-
-        previewJson[category][i] = {
-            "id": "1",
-            "title": title,
-            "whatId": "TheBestTopic_general_1",
-            "edit_increment": "0",
-            "main_link": mainlink,
-            "picture_link": picturelink,
-            "sitemap_json": siteMapJson,
-            "is_book": is_book,
-            "compiled_rating": "10",
-            "positive_rating": "0",
-            "negative_rating": "0",
-            "rating_id": "13"
-        }
-        query += `insertdb\t${category}\t${generatedTopicName}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
-    }
-
-    var deepDiveContainers = document.getElementsByClassName("deepDive_container")
-    for(var i = 0; i < deepDiveContainers.length; i++){
-        var focusedElem = deepDiveContainers[i];
-        var specialId = focusedElem.getAttribute("data-id");
-        var category = "deepDive"
-
-        var title = document.getElementById(category+"_title_"+specialId).value;
-        if(title == "") continue;
-        var mainlink = document.getElementById(category+"_mainlink_"+specialId).getAttribute("data-link");
-        if(mainlink == 0 || mainlink == "" || mainlink == null) mainlink = "NULL";
-        var picturelink = document.getElementById(category+"_picturelink_"+specialId).value;
-
-
-        var siteMapJson = "[";
-        for(var a = 0; a < 6; a++){
-            var subtitle_id = category+"_subtitle_"+specialId+"_"+a;
-            var sublink_id = category+"_sublink_"+specialId+"_"+a;
-
-            var subtitle = document.getElementById(subtitle_id).value;
-            var link = document.getElementById(sublink_id).getAttribute("data-link");
-            if(subtitle == "") continue;
-            if(link == 0 || link == "" || link == null) link = "false";
-
-            siteMapJson += `{"title": "${subtitle}", "link": "${link}"},`;
-        }
-        if(siteMapJson.length > 1) siteMapJson = siteMapJson.substring(0, siteMapJson.length - 1) + "]";
-        else siteMapJson = "[]";
-
-        var is_book = document.querySelector('input[name="'+category+'_is_book_'+specialId+'"]:checked').value;
-        if(is_book){
-            if(is_book == "book") is_book = 1;
-            else is_book = 0;
-        }else{
-            is_book = 0;
-        }
-
-        previewJson[category][i] = {
-            "id": "1",
-            "title": title,
-            "whatId": "TheBestTopic_general_1",
-            "edit_increment": "0",
-            "main_link": mainlink,
-            "picture_link": picturelink,
-            "sitemap_json": siteMapJson,
-            "is_book": is_book,
-            "compiled_rating": "10",
-            "positive_rating": "0",
-            "negative_rating": "0",
-            "rating_id": "13"
-        }
-        query += `insertdb\t${category}\t${generatedTopicName}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
-    }
+    query += getContainerList("general", generatedTopicName, previewJson);
+    query += getContainerList("deepDive", generatedTopicName, previewJson);
     
     window.commitQuery = query;
     console.log(query.replaceAll(";", "\n"));
@@ -311,6 +106,129 @@ function previewAndSave(){
     
     // document.getElementById("previewIframe");
     // commandToDB(query);
+}
+
+
+function getContainerList(category, topicname, previewJson){
+    var generalContainers = document.getElementsByClassName(category+"_container");
+    var query = "";
+    for(var i = 0; i < generalContainers.length; i++){
+        let any_item_changed = false;
+        var focusedElem = generalContainers[i];
+        var specialId = focusedElem.getAttribute("data-id");
+
+        var title = document.getElementById(category+"_title_"+specialId).value;
+        console.log(title, document.getElementById(category+"_title_"+specialId).getAttribute("data-original"))
+        if(title != document.getElementById(category+"_title_"+specialId).getAttribute("data-original")) any_item_changed = true;
+        if(title == "") continue;
+        var mainlink = document.getElementById(category+"_mainlink_"+specialId).getAttribute("data-link");
+        if(mainlink != document.getElementById(category+"_mainlink_"+specialId).getAttribute("data-original")) any_item_changed = true;
+        if(mainlink == 0 || mainlink == "" || mainlink == null) mainlink = "NULL";
+        var picturelink = document.getElementById(category+"_picturelink_"+specialId).value;
+        if(picturelink != document.getElementById(category+"_picturelink_"+specialId).getAttribute("data-original")) any_item_changed = true;
+
+
+        var siteMapJson = "[";
+        for(var a = 0; a < 6; a++){
+            var subtitle_id = category+"_subtitle_"+specialId+"_"+a;
+            var sublink_id = category+"_sublink_"+specialId+"_"+a;
+
+            var subtitle = document.getElementById(subtitle_id).value;
+            if(subtitle != document.getElementById(subtitle_id).getAttribute("data-original")) any_item_changed = true;
+            var link = document.getElementById(sublink_id).getAttribute("data-link");
+            if(subtitle == "") continue;
+            let original_link = document.getElementById(sublink_id).getAttribute("data-original");
+            if(original_link == 0 || original_link == "" || original_link == null) original_link = "false";
+            if(link != original_link) any_item_changed = true;
+
+            siteMapJson += `{"title": "${subtitle}", "link": "${link}"},`;
+        }
+        if(siteMapJson.length > 1) siteMapJson = siteMapJson.substring(0, siteMapJson.length - 1) + "]";
+        else siteMapJson = "[]";
+
+        var is_book = document.querySelector('input[name="'+category+'_is_book_'+specialId+'"]:checked').value;
+        if(is_book){
+            if(is_book == "book") is_book = 1;
+            else is_book = 0;
+        }else{
+            is_book = 0;
+        }
+
+        previewJson[category][i] = {
+            "id": "1",
+            "title": title,
+            "whatId": "TheBestTopic_general_1",
+            "edit_increment": "0",
+            "main_link": mainlink,
+            "picture_link": picturelink,
+            "sitemap_json": siteMapJson,
+            "is_book": is_book,
+            "compiled_rating": "10",
+            "positive_rating": "0",
+            "negative_rating": "0",
+            "rating_id": "13"
+        }
+
+        if(window.create_topic){
+            query += `insertdb\t${category}\t${topicname}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
+        }else{
+            if(focusedElem.classList.contains("existed_item")){
+                if(any_item_changed) query += `edit\t${category}\t${topicname}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
+            }else{
+                query += `editinsert\t${category}\t${topicname}\t${title}\t${mainlink}\t${picturelink}\t${siteMapJson}\t${is_book};`;
+            }
+        }
+    }
+    return query;
+}
+
+function getList(category, topicname, previewJson){
+    var listLinksElems = document.getElementsByClassName(category+"_title");
+    var query = "";
+    
+    for(var i = 0; i < listLinksElems.length; i++){
+        var any_item_changed = false;
+        var focusedElem = listLinksElems[i];
+        if(!focusedElem.hasAttribute("data-id")) continue;
+        var specialId = focusedElem.getAttribute("data-id");
+
+
+        var title = focusedElem.value;
+        if(title != focusedElem.getAttribute("data-original")) any_item_changed = true;
+        var link = document.getElementById(category+"_link_"+specialId).getAttribute("data-link");
+        if(link == 0 || link == "" || link == null) link = "NULL";
+        let original_link = document.getElementById(category+"_link_"+specialId).getAttribute("data-original");
+        if(original_link == 0 || original_link == "" || original_link == null) original_link = "NULL";
+        if(link != original_link) any_item_changed = true;
+        if(title == "") continue;
+        previewJson[category][i] = {
+            "id": i,
+            "title": title,
+            "whatId": "TEST_tutorial_4",
+            "edit_increment": "0",
+            "link": link,
+            "compiled_rating": "10",
+            "positive_rating": "0",
+            "negative_rating": "0",
+            "rating_id": "19"
+        }
+        console.log(focusedElem.classList.contains("existed_item"), any_item_changed);
+
+        if(window.create_topic){
+            query += `insertdb\t${category}\t${topicname}\t${title}\t${link};`;
+        }else{
+            console.log("hitted")
+            if(focusedElem.classList.contains("existed_item")){
+                if(any_item_changed) query += `edit\t${category}\t${topicname}\t${title}\t${link};`;
+            }else{
+                console.log("editinsert1")
+
+                query += `editinsert\t${category}\t${topicname}\t${title}\t${link};`;
+            }
+        }
+    }
+
+    return query;
 }
 
 function commandToDB(query){
