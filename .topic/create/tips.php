@@ -4,8 +4,8 @@
 
     <?php
     if(isset($data) && isset($data["info"]) && $data != false && $data != null){
-        $index = 0;
         foreach($data["tips"] as &$item){
+            $index = $item["id"];
             echo '<li><input value="'.$item["title"].'" id="tips_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="tips_title" class="tips_title bottom_input auto_remove_input existed_item" type="text"/>
             <button id="tips_link_'.$index.'" data-id="'.$index.'" class="btn btn-icon tips_link store_link_btn existed_item '.getLinkCssClass($item["link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;" ';
     
@@ -13,9 +13,9 @@
             else echo "data-original=\"\"";
     
             echo '><i class="fas fa-link"></i></button></li>';
-            $index++;
         }
     }
+    $index = 99999;
     ?>
 
     <li><input type="text" id="tips_title_<?php echo $index; ?>" data-id='<?php echo $index; ?>' data-type="tips_title" class="tips_title bottom_input auto_remove_input"/><button class="btn btn-icon store_link_btn" id="tips_link_<?php echo $index; ?>" data-id='<?php echo $index; ?>' class="tips_link" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-link"></i></button></li>

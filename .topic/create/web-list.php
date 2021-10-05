@@ -12,8 +12,8 @@
     if(isset($data)  && isset($data["info"]) && $data != false && $data != null){
         $set_values_javascript = "window.addEventListener('load', (event) => {\n";
     
-        $index = 0;
         foreach($data[$web_list_list_type] as &$item){
+            $index = $item["id"];
             $book_checked_str = "";
             $website_checked_str = "";
             
@@ -75,15 +75,12 @@
                 <button class="btn btn-green">Upload <i class="fas fa-upload"></i></button>
                 </div>
                 </div></li>';
-                
-                $index++;
         }
-    
+        
         $set_values_javascript = $set_values_javascript."});";
-    
-    
         echo "<script>".$set_values_javascript."</script>";
     }
+    $index = 99999;
 
 ?>
 

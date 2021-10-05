@@ -4,8 +4,8 @@
 <ol class="tab-in3 large">
     <?php
     if(isset($data)  && isset($data["info"]) && $data != false && $data != null){
-        $index = 0;
         foreach($data["tutorial"] as &$item){
+            $index = $item["id"];
             echo '<li><input value="'.$item["title"].'" id="tutorial_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="tutorial_title" class="tutorial_title bottom_input auto_remove_input existed_item" type="text"/>
             <button id="tutorial_link_'.$index.'" data-id="'.$index.'" class="btn btn-icon tutorial_link store_link_btn existed_item '.getLinkCssClass($item["link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;" ';
     
@@ -16,9 +16,9 @@
                 <button id="tutorial_up_'.$index.'" data-id="'.$index.'" class="tutorial_up btn btn-icon" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-chevron-up"></i></button>
                 <button id="tutorial_down_'.$index.'" data-id="'.$index.'" class="tutorial_down btn btn-icon" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;"><i class="fas fa-chevron-down"></i></button>
             </li>';
-            $index++;
         }
     }
+    $index = 99999;
     ?>
 
     <li>

@@ -11,8 +11,8 @@
         <ol style="padding-left: 10px;">
             <?php
             if(isset($data)  && isset($data["info"]) && $data != false && $data != null){
-                $index = 0;
                 foreach($data["toolbox"] as &$item){
+                    $index = $item["id"];
                     echo '<li><input value="'.$item["title"].'" id="toolbox_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="toolbox_title" class="toolbox_title bottom_input auto_remove_input existed_item" type="text"/>
                     <button id="toolbox_link_'.$index.'" data-id="'.$index.'" class="btn btn-icon toolbox_link store_link_btn existed_item '.getLinkCssClass($item["link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;" ';
     
@@ -20,9 +20,9 @@
                     else echo "data-original=\"\"";
     
                     echo '><i class="fas fa-link"></i></button></li>';
-                    $index++;
                 }
             }
+                $index = 9999;
             ?>
 
 
