@@ -3,7 +3,7 @@
 <ul class="segoe topic-tips" style="color: #4c4c4c;">
 
     <?php
-    if(isset($data)){
+    if(isset($data) && isset($data["info"]) && $data != false && $data != null){
         $index = 0;
         foreach($data["tips"] as &$item){
             echo '<li><input value="'.$item["title"].'" id="tips_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="tips_title" class="tips_title bottom_input auto_remove_input existed_item" type="text"/>

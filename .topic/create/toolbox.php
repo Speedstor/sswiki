@@ -10,7 +10,7 @@
         
         <ol style="padding-left: 10px;">
             <?php
-            if(isset($data)){
+            if(isset($data)  && isset($data["info"]) && $data != false && $data != null){
                 $index = 0;
                 foreach($data["toolbox"] as &$item){
                     echo '<li><input value="'.$item["title"].'" id="toolbox_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="toolbox_title" class="toolbox_title bottom_input auto_remove_input existed_item" type="text"/>

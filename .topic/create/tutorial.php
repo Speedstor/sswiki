@@ -3,7 +3,7 @@
 <div class="spacer small"></div>
 <ol class="tab-in3 large">
     <?php
-    if(isset($data)){
+    if(isset($data)  && isset($data["info"]) && $data != false && $data != null){
         $index = 0;
         foreach($data["tutorial"] as &$item){
             echo '<li><input value="'.$item["title"].'" id="tutorial_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="tutorial_title" class="tutorial_title bottom_input auto_remove_input existed_item" type="text"/>

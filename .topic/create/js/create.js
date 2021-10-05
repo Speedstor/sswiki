@@ -202,6 +202,7 @@ function previewAndSave(){
         if(title == "") continue;
         var mainlink = document.getElementById(category+"_mainlink_"+specialId).getAttribute("data-link");
         if(mainlink == 0 || mainlink == "" || mainlink == null) mainlink = "NULL";
+        console.log("picture link: "+category+"_picturelink_"+specialId);
         var picturelink = document.getElementById(category+"_picturelink_"+specialId).value;
 
 
@@ -308,7 +309,7 @@ function previewAndSave(){
     document.getElementById("iframeForm").submit();
     document.getElementById("previewModel").style.display = "block";
     
-    document.getElementById("previewIframe");
+    // document.getElementById("previewIframe");
     // commandToDB(query);
 }
 
