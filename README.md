@@ -66,6 +66,8 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - anyone can download the whole database
     - along with the web crawler indexes
   - figure out how to update features (CI: continuous integration?)
+- Add a way for a voting system on feature changes (both what to work on / and what is accepted)
+  - And how to integrate with P2P/onion site
 <br/>
 
 ## :blue_book: Brief Documentation
