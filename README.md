@@ -30,15 +30,18 @@
 
   [![Initial Developer](https://img.shields.io/badge/Init%20Developer-speedstor.net-dce.svg?logo=data:image/png;base64,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)](https://speedstor.net)  ![Status](https://img.shields.io/badge/status-alpha-critical.svg)  [![GitHub Issues](https://img.shields.io/github/issues/Speedstor/sswiki.svg)](https://github.com/Speedstor/sswiki/issues)  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Speedstor/sswiki.svg)](https://github.com/Speedstor/sswiki/pulls)  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-- [:golf: Roadmap](#golf-roadmap)
-- [:blue_book: Brief Documentation](#blue_book-brief-documentation)
-  - [Directory Structure](#directory-structure)
-  - [:computer: Current server setup](#computer-current-server-setup)
-- [Contribute Code](#contribute-code)
+- [Self Study Wiki&nbsp;<small><small>*(sswiki)*</small></small>](#self-study-wikismallsmallsswikismallsmall)
+        - [💡 To create a platform that combines the power of search engines with concept of wikis](#-to-create-a-platform-that-combines-the-power-of-search-engines-with-concept-of-wikis)
+  - [:golf: Roadmap](#golf-roadmap)
+  - [:blue_book: Brief Documentation](#blue_book-brief-documentation)
+    - [Directory Structure](#directory-structure)
+    - [Current server setup](#current-server-setup)
+  - [:green_heart: Contribute Code](#green_heart-contribute-code)
+          - [Made by speedstor](#made-by-speedstor)
 
 ---
 
-[![sswiki Screen Shot](./src/homepage_screenshot.jpg)](https://example.com)
+[![sswiki Screen Shot](./src/homepage_screenshot.jpg)](http://selfstudywiki.com)
 
 ##### 💡 To create a platform that combines the power of search engines with concept of wikis
 
