@@ -35,7 +35,6 @@
   - [Directory Structure](#directory-structure)
   - [:computer: Current server setup](#computer-current-server-setup)
 - [Contribute Code](#contribute-code)
-        - [Made by speedstor](#made-by-speedstor)
 
 ---
 
