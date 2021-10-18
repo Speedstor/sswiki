@@ -1,6 +1,6 @@
 
 
-#Self Study Wiki&nbsp;<small><small>*(sswiki)*</small></small>
+# Self Study Wiki&nbsp;<small><small>*(sswiki)*</small></small>
 <!-- 
 <details>
   <summary>Table of Contents</summary>
