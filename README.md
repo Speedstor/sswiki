@@ -88,7 +88,6 @@ The end goal of this platform is to effectively link resources to "complex" topi
 | /secure/ | | a more exclusive version of include. Error here can leak a lot of things and surrender control for the server |
 | /src/ | | static images for website |
 | / | | pages, main pages |
-<br/>
 
 ### Current server setup
 - docker
