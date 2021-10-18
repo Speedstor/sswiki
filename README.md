@@ -91,7 +91,7 @@ The end goal of this platform is to effectively link resources to "complex" topi
 | / | | pages, main pages |
 <br/>
 
-### :computer: Current server setup
+### Current server setup
 - docker
   - mysql
   - php
@@ -101,11 +101,12 @@ The end goal of this platform is to effectively link resources to "complex" topi
 - contact aldrin.cheung@gmail.com to get details
 <br/>
 
-## Contribute Code
+## :green_heart: Contribute Code
 
-Any help on this project would be great appriciated :D. Because this project is currently so small, there are no rules. Just fork and submit pull request
+Any help on this project would be great appriciated :D. Because this project is currently so small, there are no rules. Just fork and submit a pull request :smirk:.
 
 
-<br/>
+<br/><br/>
+
 ###### Made by [speedstor](https://speedstor.net)
   
