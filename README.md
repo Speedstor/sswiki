@@ -70,6 +70,8 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - figure out how to update features (CI: continuous integration?)
 - Add a way for a voting system on feature changes (both what to work on / and what is accepted)
   - And how to integrate with P2P/onion site
+- Tinder for peer study partners
+- timeline for learning (accountability)
 <br/>
 
 ## :blue_book: Brief Documentation
