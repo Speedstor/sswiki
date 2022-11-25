@@ -73,6 +73,10 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - And how to integrate with P2P/onion site
 - Tinder for peer study partners
 - timeline for learning (accountability)
+- Chaos mode
+  - A youtube like recommendation system, where the most entertaining videos are suggested
+  - Take away the structure to make people feel free and entertained
+    - like a movie, there just one thing after the other, not like steps and boring
 <br/>
 
 ## :blue_book: Brief Documentation
