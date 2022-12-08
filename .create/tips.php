@@ -6,7 +6,7 @@
     if(isset($data) && isset($data["info"]) && $data != false && $data != null){
         foreach($data["tips"] as &$item){
             $index = $item["id"];
-            echo '<li><input value="'.$item["title"].'" id="tips_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="tips_title" class="tips_title bottom_input auto_remove_input existed_item" type="text"/>
+            echo '<li><input value="'.$item["title"].'" id="tips_title_'.$index.'" data-id="'.$index.'" data-original="'.$item["title"].'" data-type="tips_title" class="tips_title bottom_input existed_item" type="text"/>
             <button id="tips_link_'.$index.'" data-id="'.$index.'" class="btn btn-icon tips_link store_link_btn existed_item '.getLinkCssClass($item["link"]).'" style="border: 1px solid grey; border-radius: 5px; margin-left: 4px;" ';
     
             if($item["link"]) echo "data-link=\"".$item["title"]."\"  data-original=\"".$item["title"]."\"";

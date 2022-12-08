@@ -28,7 +28,7 @@ require "head.php";
             return 'Do you really want to leave this page?';
     };
 
-    window.topicname = <?php echo $editing_for  ?>;
+    window.topicname = "<?php echo $editing_for  ?>";
 </script>
 
 <body style="margin: 0px;">
@@ -56,9 +56,7 @@ require "head.php";
 <script src="https://kit.fontawesome.com/1a1c0507f3.js" crossorigin="anonymous"></script>
 
 <?php 
-    require $_SERVER['DOCUMENT_ROOT']."/.topic/imports.php"; 
-
-    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/main.php";
+    include $_SERVER['DOCUMENT_ROOT']."/.create/main.php";
 ?>
 
 

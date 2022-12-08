@@ -31,8 +31,6 @@ require "header.php";
 <script src="https://kit.fontawesome.com/1a1c0507f3.js" crossorigin="anonymous"></script>
 
 <?php 
-    require $_SERVER['DOCUMENT_ROOT']."/.topic/imports.php"; 
-
     if($data == false || !isset($data) || $data == null) echo "<div style='display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 500px);'><h1 style='text-align:center;'>Sorry!! this topic does not exist</h1><p style='text-align: center'>and this page have not been designed properly yet</div>";
     else include $_SERVER['DOCUMENT_ROOT']."/.topic/main.php";
 ?>

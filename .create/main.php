@@ -2,8 +2,8 @@
     require_once($_SERVER['DOCUMENT_ROOT']."/.topic/helpers.php");
 ?>
 
-<script src="/.topic/create/js/create-buttons.js" type="text/javascript"></script>
-<script src="/.topic/create/js/create-elems.js" type="text/javascript"></script>
+<script src="/.create/js/create-buttons.js" type="text/javascript"></script>
+<script src="/.create/js/create-elems.js" type="text/javascript"></script>
 
 <div id="background" style="background-color: rgb(226, 226, 226); width:100%;">
 <div class="centerDiv" style="min-height: 100vh; margin-left: 120px; width: 90%; max-width: 1500px;">
@@ -33,27 +33,27 @@
         <div class="searchResults">
             <div class="div-list" style="flex-grow: 3; max-width: 814px; border-color: #cecece;">
                 <?php
-                    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/general.php";
+                    include $_SERVER['DOCUMENT_ROOT']."/.create/general.php";
                 ?>
 
                 
                 <?php
-                    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/tutorial.php";
+                    include $_SERVER['DOCUMENT_ROOT']."/.create/tutorial.php";
                 ?>
 
 
                 <?php
-                    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/tips.php";
+                    include $_SERVER['DOCUMENT_ROOT']."/.create/tips.php";
                 ?>
                 
 
                 <?php
-                    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/deepDive.php";
+                    include $_SERVER['DOCUMENT_ROOT']."/.create/deepDive.php";
                 ?>
 
                 
                 <?php
-                    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/fun.php";
+                    include $_SERVER['DOCUMENT_ROOT']."/.create/fun.php";
                 ?>
 
 
@@ -83,7 +83,7 @@
                 
                 
                 <?php
-                    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/toolbox.php";
+                    include $_SERVER['DOCUMENT_ROOT']."/.create/toolbox.php";
                 ?>
 
                 <div class="box" style="margin-top: 20px; width: 321px;">
@@ -196,6 +196,6 @@
     </style>
     
     <?php
-        // include $_SERVER['DOCUMENT_ROOT']."/.topic/create/otherTopics.php";
+        // include $_SERVER['DOCUMENT_ROOT']."/.create/otherTopics.php";
     ?>
 </div>

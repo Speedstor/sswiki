@@ -40,9 +40,7 @@ require "head.php";
 <script src="https://kit.fontawesome.com/1a1c0507f3.js" crossorigin="anonymous"></script>
 
 <?php 
-    require $_SERVER['DOCUMENT_ROOT']."/.topic/imports.php"; 
-
-    include $_SERVER['DOCUMENT_ROOT']."/.topic/create/main.php";
+    include $_SERVER['DOCUMENT_ROOT']."/.create/main.php";
 ?>
 
 
