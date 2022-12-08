@@ -32,13 +32,13 @@ window.onload = () => {
 }
 function escPreview() {
     document.getElementById("previewModel").style.display = "none";
-    document.getElementById("iframeForm").action = "http://selfstudywiki.com/topic/?disable_cache="+Math.floor(Math.random() * 1000000);
+    document.getElementById("iframeForm").action = "http://selfstudywiki.speedstor.net/topic/?disable_cache="+Math.floor(Math.random() * 1000000);
     
 }
 
 function confirmSubmit() {
     saveToDatabase();
-    // window.location.href = "http://selfstudywiki.com/topic/";
+    // window.location.href = "http://selfstudywiki.speedstor.net/topic/";
 }
 
 function saveToDatabase(){
@@ -46,7 +46,7 @@ function saveToDatabase(){
 }
 function previewAndSave(){
     
-    var generatedTopicName = "*last_inserted_topicname";
+    var submitTopicname = "*last_inserted_topicname";
     var previewJson = {
         "info": {
             "topicname": "AnotherTest",
@@ -69,7 +69,9 @@ function previewAndSave(){
     var topicTitle = document.getElementById("input_topic_title").value;
     var description = document.getElementById("textarea_topic_description").value;
     if(document.getElementById("input_topic_title").classList.contains("existed_item") && window.location.href.includes("/edit.php")){
-        query += `edit\tinfo\t${topicTitle}\t${description};`;
+        if(topicTitle != document.getElementById("input_topic_title").getAttribute("data-original") || description != document.getElementById("textarea_topic_description").getAttribute("data-original"))
+            query += `edit\tinfo\t${topicTitle}\t${description};`;
+        submitTopicname = window.topicname;
     }else{
         //all new
         window.create_topic = true;
@@ -85,20 +87,20 @@ function previewAndSave(){
     previewJson.info.description = description;
     
     
-    query += getList("tutorial", generatedTopicName, previewJson);
-    query += getList("tips", generatedTopicName, previewJson);
-    query += getList("fun", generatedTopicName, previewJson);
-    query += getList("toolbox", generatedTopicName, previewJson);
+    query += getList("tutorial", submitTopicname, previewJson);
+    query += getList("tips", submitTopicname, previewJson);
+    query += getList("fun", submitTopicname, previewJson);
+    query += getList("toolbox", submitTopicname, previewJson);
 
-    query += getContainerList("general", generatedTopicName, previewJson);
-    query += getContainerList("deepDive", generatedTopicName, previewJson);
+    query += getContainerList("general", submitTopicname, previewJson);
+    query += getContainerList("deepDive", submitTopicname, previewJson);
     
     window.commitQuery = query;
     console.log(query.replaceAll(";", "\n"));
     console.log(previewJson);
 
     document.getElementById("givenJsonParam").value = JSON.stringify(previewJson);
-    document.getElementById("iframeForm").action = "http://selfstudywiki.com/topic/?disable_cache="+Math.floor(Math.random() * 1000000);
+    document.getElementById("iframeForm").action = "http://selfstudywiki.speedstor.net/topic/?disable_cache="+Math.floor(Math.random() * 1000000);
     document.getElementById("iframeForm").submit();
     document.getElementById("previewModel").style.display = "block";
     
@@ -231,7 +233,7 @@ function getList(category, topicname, previewJson){
 
 function commandToDB(query){
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://selfstudywiki.com/secure/command.php", true);
+    xhr.open("POST", "http://selfstudywiki.speedstor.net/secure/command.php", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
         "query": query,

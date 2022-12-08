@@ -2,7 +2,7 @@
 $required_access_level = 33;
 require $_SERVER['DOCUMENT_ROOT']."/secure/check_access.php";
 
-require_once($_SERVER['DOCUMENT_ROOT']."/.topic/jsonPhp.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/api/jsonPhp.php");
 
 $is_edit = true;
 $editing_for = $_POST["topicname"];
@@ -15,7 +15,7 @@ if($data == false) header("Location: /feedbackPages/bad-request.php");
 <?php
 //access allowed and topic exists
 require_once("config.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/.topic/jsonPhp.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/api/jsonPhp.php");
 
 require "head.php";
 ?>
@@ -27,6 +27,8 @@ require "head.php";
         if(changed)
             return 'Do you really want to leave this page?';
     };
+
+    window.topicname = <?php echo $editing_for  ?>;
 </script>
 
 <body style="margin: 0px;">
@@ -40,7 +42,7 @@ require "head.php";
             <div style="flex-grow: 3;"></div>
 
             <div style="display: flex; align-items: bottom; align-content: flex-end; flex-wrap: wrap;">
-                <button class="btn b-red" style="margin-bottom: 7px; margin-left: 13px;" onclick="changed = false; window.location.href = 'http://selfstudywiki.com';">Cancel</button>
+                <button class="btn b-red" style="margin-bottom: 7px; margin-left: 13px;" onclick="changed = false; window.location.href = 'http://selfstudywiki.speedstor.net';">Cancel</button>
                 <button class="btn b-green" style="margin-bottom: 7px; margin-left: 13px;" onclick="previewAndSave()">Preview and Save</button>
             </div>
             

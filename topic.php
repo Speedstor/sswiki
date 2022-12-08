@@ -1,6 +1,6 @@
 <?php
 require_once("config.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/.topic/jsonPhp.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/api/jsonPhp.php");
 
 $page = $_GET["q"];
 $pageParams = explode("/", $page);

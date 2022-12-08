@@ -7,7 +7,7 @@
 
 <div style="width: 80%; max-width: 1380px; margin: auto; padding-bottom: 60px; min-height: calc(100vh - 306px); ">
     <div style="width: 100%; margin: auto; padding: 10px 10% 14px 10%; box-sizing: border-box; border-bottom: 1px grey solid;">
-        <h4 style="margin: 0px; padding: 40px 20px 13px 30px; font-weight: 300;">selfstudywiki.com / login &nbsp;&nbsp;<small></small></h4>
+        <h4 style="margin: 0px; padding: 40px 20px 13px 30px; font-weight: 300;">selfstudywiki.speedstor.net / login &nbsp;&nbsp;<small></small></h4>
 
         <div class="mainDiv">
         <?php

@@ -1,6 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/includes/dbh.inc.php");
 
+//accesses -----------------------------------------------------------------
 function getTopicJson($topicname){
     $returnObject;
 
@@ -27,17 +28,6 @@ function getTableRowCount($topicname, $type){
         return $count['COUNT(*)'];
     }
 }
-
-// echo "<pre>";
-// print_r(getTopicJson("TheBestTopic"));
-// print_r(getTopicInfo_id(2));
-// $testObj  = getTypeJson("TEST", "tutorial", "compiled_rating");
-// $testJson =  json_encode(getTopicJson("TheBestTopic"));
-// print_r(array_keys($testObj[9]));
-// echo $testJson;
-// print_r(getTypeJson("TEST", "tutorial"));
-// echo "</pre>";
-
 
 function getTypeJson($topicname, $type, $orderedBy = "id", $limit = 40, $if_desc = true){
     return getArray_fromMysql($topicname."_".$type, $orderedBy, $limit, $if_desc);
@@ -71,7 +61,18 @@ function getTopicInfo_topicname($topicname){
     if(!$result){
         return mysqli_error($conn);
     }
-    $returnObject;
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        return $row;
+    }
+    return false;
+}
+
+function getItem($whatId){
+    global $conn;
+    $id_parts = explode("_", $whatId);
+    $query = "SELECT * FROM ".$id_parts[0]."_".$id_parts[1]." WHERE id=".$id_parts[2];
+    $result = mysqli_query($conn, $query);
+    if(!$result) return false;
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         return $row;
     }

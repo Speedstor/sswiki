@@ -1,5 +1,5 @@
 <div class="footerDiv">
-    <h5 class="thin">selfstudywiki.com</h5>
+    <h5 class="thin">selfstudywiki.speedstor.net</h5>
     <a href="">About Us</a>
     <a href="">Support / Contribute</a>
     <div class="spacer small"></div>

@@ -36,9 +36,10 @@ echo $commands;
 foreach($commands as &$command){
     $command = trim($command);
     $params = explode("\t", $command);
-
+    
     switch(strtolower($params[0])){
     case "createtopicsuite":
+        require_once($_SERVER['DOCUMENT_ROOT']."/secure/createTopic.php");
         $topicname = createTopicSuite($params[1], $params[2]);
         echo $topicname."_".$topicId;
         break;
@@ -48,7 +49,6 @@ foreach($commands as &$command){
             if($params[2] == "*last_inserted_topicname") {
                 $params[2] = $topicname;
                 if($topicname == false) continue 3;
-                echo "replaced name!!!\n\n";
             }
         case "tutorial":
             echo insertDB_tutorial($params[2], $params[3], $params[4], $params[5]);
@@ -68,43 +68,33 @@ foreach($commands as &$command){
         case "deepdive":
             echo insertDB_deepDive($params[2], $params[3], $params[4], $params[5], $params[6], $params[7]);
             break;
-        // case "edithistory":
-            //break
-        // ...
-        }
-        break;
-    case "edit":
-        switch(strtolower($params[1])){
-        default:
-            if($params[2] == "*last_inserted_topicname") {
-                $params[2] = $topicname;
-                if($topicname == false) continue 3;
-                echo "replaced name!!!\n\n";
-            }
-        case "tutorial":
-            echo edit_tutorial($params[2], $params[3], $params[4], $params[5]);
-            break;
-        case "tips":
-            echo edit_tips($params[2], $params[3], $params[4]);
-            break;
-        case "fun":
-            echo edit_fun($params[2], $params[3], $params[4]);
-            break;
-        case "toolbox":
-            echo edit_toolbox($params[2], $params[3], $params[4]);
-            break;
-        case "general":
-            echo edit_general($params[2], $params[3], $params[4], $params[5], $params[6], $params[7]);
-            break;
-        case "deepdive":
-            echo edit_deepDive($params[2], $params[3], $params[4], $params[5], $params[6], $params[7]);
-            break;
-        // case "edithistory":
-            //break
-        // ...
         }
         break;
     case "editinsert":
+        $editType = "insert";
+    case "edit":
+        require_once($_SERVER['DOCUMENT_ROOT']."/secure/editItems.php");
+        $editType = "edit";
+        switch(strtolower($params[1])){
+        case "tutorial":
+            echo edit_tutorial($editType, $params[2], $params[3], $params[4], $params[5], $params[6]);
+            break;
+        case "tips":
+            echo edit_tips($editType, $params[2], $params[3], $params[4], $params[5]);
+            break;
+        case "fun":
+            echo edit_fun($editType, $params[2], $params[3], $params[4], $params[5]);
+            break;
+        case "toolbox":
+            echo edit_toolbox($editType, $params[2], $params[3], $params[4], $params[5]);
+            break;
+        case "general":
+            echo edit_general($editType, $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8]);
+            break;
+        case "deepdive":
+            echo edit_deepDive($editType, $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8]);
+            break;
+        }
         break;
     }
     echo "\n";

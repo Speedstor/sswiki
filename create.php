@@ -1,6 +1,6 @@
 <?php
 require_once("config.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/.topic/jsonPhp.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/api/jsonPhp.php");
 
 
 require "head.php";
@@ -26,7 +26,7 @@ require "head.php";
 
             <div style="display: flex; align-items: bottom; align-content: flex-end; flex-wrap: wrap;">
 
-                <button class="btn b-red" style="margin-bottom: 7px; margin-left: 13px;" onclick="changed = false; window.location.href = 'http://selfstudywiki.com';">Cancel</button>
+                <button class="btn b-red" style="margin-bottom: 7px; margin-left: 13px;" onclick="changed = false; window.location.href = 'http://selfstudywiki.speedstor.net';">Cancel</button>
                 <button class="btn b-green" style="margin-bottom: 7px; margin-left: 13px;" onclick="previewAndSave()">Preview and Save</button>
             </div>
             

@@ -9,7 +9,7 @@
     <div class="box-margin">
         <div class="searchHeader">
             <div style="display: flex;">
-                <h1 class="thin no-margin"><small>Topic: </small><input oninput="this.size = this.value.length;" class="<?php if(isset($data)) echo "existed_item"; ?>" <?php if(isset($data)) echo "value='".$data["info"]["topic_title"]."'"; ?> id="input_topic_title" style="font-size: 20px;" type="text"/></h1>
+                <h1 class="thin no-margin"><small>Topic: </small><input oninput="this.size = this.value.length;" class="<?php if(isset($data)) echo "existed_item"; ?>" <?php if(isset($data)) echo "value='".$data["info"]["topic_title"]."' data-original='".$data["info"]["topic_title"]."'"; ?> id="input_topic_title" style="font-size: 20px;" type="text"/></h1>
                 <label style="color: red; margin-top: 20px; margin-left: 9px;"><i class="fas fa-star-of-life"></i> Required</label>
             </div>
             <div style="display: flex; flex-direction: column; justify-content: flex-end;">
@@ -62,7 +62,7 @@
                         <div class="separator"></div>
                         <div class="spacer tiny"></div>
                         
-                        <textarea id="textarea_topic_description" style="width: 100%; min-height: 120px;"></textarea>
+                        <textarea id="textarea_topic_description" style="width: 100%; min-height: 120px;" data-original="<?php echo $data["info"]["description"];?>"><?php echo $data["info"]["description"];?></textarea>
                         
                         
                     </div>
@@ -130,7 +130,7 @@
     <h1 class="btn" style="position: absolute; background: #00ff00; float: left; left: 14px; top: 0; border: black 2px solid; padding: 14px; font-size: 19px; color: black; border-radius: 15px;">Preview</h1>
     <div class="box" style="width: 95%;  height: 95vh; margin: auto; margin-top: 10px;">
         <div class="box-content">
-        <form target="myIframe" style="display: none;" id="iframeForm" action="http://selfstudywiki.com/topic/" method="post">
+        <form target="myIframe" style="display: none;" id="iframeForm" action="http://selfstudywiki.speedstor.net/topic/" method="post">
             <input id="givenJsonParam" type="text" name="givenJson" value="" />
         </form>
 

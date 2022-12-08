@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
 
 function redirectSearch(){
     if(document.getElementById('mainSearch').value != "") 
-        window.location.href='http://selfstudywiki.com/search.php?q='+document.getElementById('mainSearch').value;
+        window.location.href='http://selfstudywiki.speedstor.net/search.php?q='+document.getElementById('mainSearch').value;
 }
 
 var test = "here";

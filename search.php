@@ -10,7 +10,7 @@ require_once("config.php");
 
 $search_query = $_GET['q'];
 require_once($_SERVER['DOCUMENT_ROOT']."/includes/dbh.inc.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/.topic/jsonPhp.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/api/jsonPhp.php");
 
 $result = mysqli_query($conn, "INSERT INTO search_log(`query`, `datetime`) VALUES ('".$search_query."', '".date("Y-m-d H:i:s")."');");
 while (mysqli_next_result($conn));
@@ -102,7 +102,7 @@ if($fuzzyResultsNum < 0) $fuzzyResultsNum = 0;
                 }
                 foreach($title_match_rows as &$item){
                     echo '
-                    <div class="box item resultItem hover-grey" onclick="window.location.href=\'http://selfstudywiki.com/topic/\'+\''.$item["topicname"].'\'.replace(/([a-z])([A-Z])/g, \'$1-$2\').trim();">
+                    <div class="box item resultItem hover-grey" onclick="window.location.href=\'http://selfstudywiki.speedstor.net/topic/\'+\''.$item["topicname"].'\'.replace(/([a-z])([A-Z])/g, \'$1-$2\').trim();">
                         <div class="item-margin">
                             <div>
                                 <h3 style="margin: 0px;">'.$item["topic_title"].'</h3>
