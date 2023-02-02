@@ -1,6 +1,6 @@
 
 
-# Self Study Wiki&nbsp;<small><small>*(sswiki)*</small></small>
+# Self Study Wiki&nbsp;<small><small>*(sswiki)*</small></small> - *Prototype*
 <!-- 
 <details>
   <summary>Table of Contents</summary>
@@ -62,8 +62,10 @@ The end goal of this platform is to effectively link resources to "complex" topi
     - mission statement
   - mobile version (css)
 - Web Crawler 
-  - **only for the search page**
+  - **only for the search page**, after human generated ssWiki "content"
+    - Exception/Edge cases: if it is a company name, we should not have human gerated ssWiki pages, and the company website should go first
   - the concept now is just google but with mainly link wiki pages instead
+  - 
 - P2P/onion site
   - allow the server to be distributed
   - anyone can download the whole database
@@ -77,6 +79,15 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - A youtube like recommendation system, where the most entertaining videos are suggested
   - Take away the structure to make people feel free and entertained
     - like a movie, there just one thing after the other, not like steps and boring
+- ssMedia
+  - a place for people to upload their new content on learning
+  - our recommendation engine should not be biased towards this site
+    - should retain competition, and be monitored so that there is little bias in the process of having our own media portal
+  - the ideal is that we will still reroute traffic to other sites if they have better content
+  - but we do not depend on other sites openess to grow open-source content for learning
+- Kanban board
+  - learn about github's Kanban board, can use theirs
+  - a place to jot down new ideas, keep track of development progess
 <br/>
 
 ## :blue_book: Brief Documentation
