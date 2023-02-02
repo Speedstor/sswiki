@@ -70,13 +70,17 @@ function getTopicInfo_topicname($topicname){
 function getItem($whatId){
     global $conn;
     $id_parts = explode("_", $whatId);
-    $query = "SELECT * FROM ".$id_parts[0]."_".$id_parts[1]." WHERE id=".$id_parts[2];
-    $result = mysqli_query($conn, $query);
-    if(!$result) return false;
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        return $row;
+    $query = "SELECT * FROM ".$id_parts[0]."_".$id_parts[1];
+    if ($id_parts[2] != "null") {
+        $query = $query." WHERE id=".$id_parts[2];
     }
-    return false;
+    echo $query;
+    // $result = mysqli_query($conn, $query);
+    // if(!$result) return false;
+    // while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    //     return $row;
+    // }
+    // return false;
 }
 
 

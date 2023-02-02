@@ -32,11 +32,12 @@ require_once($_SERVER['DOCUMENT_ROOT']."/requires/db.php");
 
 $topicname = "";
 $topicId;
-echo $commands;
 foreach($commands as &$command){
     $command = trim($command);
     $params = explode("\t", $command);
-    
+
+    echo strtolower($params[1]);
+
     switch(strtolower($params[0])){
     case "createtopicsuite":
         require_once($_SERVER['DOCUMENT_ROOT']."/secure/createTopic.php");
@@ -54,19 +55,19 @@ foreach($commands as &$command){
             echo insertDB_tutorial($params[2], $params[3], $params[4], $params[5]);
             break;
         case "tips":
-            echo insertDB_tips($params[2], $params[3], $params[4]);
+            insertDB_tips($params[2], $params[3], $params[4]);
             break;
         case "fun":
-            echo insertDB_fun($params[2], $params[3], $params[4]);
+            insertDB_fun($params[2], $params[3], $params[4]);
             break;
         case "toolbox":
-            echo insertDB_toolbox($params[2], $params[3], $params[4]);
+            insertDB_toolbox($params[2], $params[3], $params[4]);
             break;
         case "general":
-            echo insertDB_general($params[2], $params[3], $params[4], $params[5], $params[6], $params[7]);
+            insertDB_general($params[2], $params[3], $params[4], $params[5], $params[6], $params[7]);
             break;
         case "deepdive":
-            echo insertDB_deepDive($params[2], $params[3], $params[4], $params[5], $params[6], $params[7]);
+            insertDB_deepDive($params[2], $params[3], $params[4], $params[5], $params[6], $params[7]);
             break;
         }
         break;
@@ -80,19 +81,19 @@ foreach($commands as &$command){
             echo edit_tutorial($editType, $params[2], $params[3], $params[4], $params[5], $params[6]);
             break;
         case "tips":
-            echo edit_tips($editType, $params[2], $params[3], $params[4], $params[5]);
+            edit_tips($editType, $params[2], $params[3], $params[4], $params[5]);
             break;
         case "fun":
-            echo edit_fun($editType, $params[2], $params[3], $params[4], $params[5]);
+            edit_fun($editType, $params[2], $params[3], $params[4], $params[5]);
             break;
         case "toolbox":
-            echo edit_toolbox($editType, $params[2], $params[3], $params[4], $params[5]);
+            edit_toolbox($editType, $params[2], $params[3], $params[4], $params[5]);
             break;
         case "general":
             echo edit_general($editType, $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8]);
             break;
         case "deepdive":
-            echo edit_deepDive($editType, $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8]);
+            edit_deepDive($editType, $params[2], $params[3], $params[4], $params[5], $params[6], $params[7], $params[8]);
             break;
         }
         break;

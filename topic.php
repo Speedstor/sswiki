@@ -2,14 +2,17 @@
 require_once("config.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/api/jsonPhp.php");
 
+// Load data, either given or retrieved from url
 $page = $_GET["q"];
 $pageParams = explode("/", $page);
 
 $data = false;
 if(count($pageParams) > 2 && $pageParams[2] != ""){
+    // load data from url path
     $topicname = preg_replace("/(^A-Za-z0-9])/", "", str_replace(" ", "", ucwords(preg_replace("/([_-])/", " ", $pageParams[2]))));
     $data = getTopicJson($topicname);
 }else{
+    // load data from given json through GET or POST
     if(isset($_GET["givenJson"])){
         $data = json_decode($_GET["givenJson"], true);
     }elseif(isset($_POST["givenJson"])){
@@ -17,6 +20,7 @@ if(count($pageParams) > 2 && $pageParams[2] != ""){
     }
 }
 
+// the php becomes a json file path
 if(count($pageParams) > 3 && $pageParams[3] == "json"){
     header("Content-type: application/json");
     echo json_encode($data);
@@ -36,9 +40,6 @@ require "header.php";
 ?>
 
 
-
-</div>
-</div>
 
 
 <?php

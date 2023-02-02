@@ -4,26 +4,33 @@ require_once($_SERVER['DOCUMENT_ROOT']."/api/jsonPhp.php");
 
 
 function edit_containerLists($category, $topicname, $id, $title, $mainlink, $picturelink, $siteMapJson, $is_book){
-    $whatId = $topicname."_".$category."_".$id;
+    $whatId = $id."_".$category."_null";
+    echo $whatId."\n";
     $original_row = getItem($whatId);
-    $from;
-    $to;
+    // $from = array();
+    // $to = array();
+    // echo "<pre>".print_r($original_row)."</pre><br/><br/>";
 
     $table_types = ["title", "main_link", "picture_link", "sitemap_json", "is_book"];
     $possibly_new_values = [$title, $mainlink, $picturelink, $siteMapJson, $is_book];
 
-    for($i = 0; i < count($table_types); $i++){
-        if($original_row[$table_types[$i]] == $possibly_new_values[$i]){
-            $from[$table_types[$focusedType]] = $original_row[$table_types[$i]];
-            $to[$table_types[$focusedType]] = $possibly_new_values[$i];
-        }
-    }
+    echo sizeof($table_types);
+    // for($i = 0; i < sizeof($table_types); $i++){
+    //     if($original_row[$table_types[$i]] == $possibly_new_values[$i]){
+    //         // $table_types[$i]
+    //         // $from[$table_types[$i]] = $original_row[$table_types[$i]];
+    //         // $to[$table_types[$i]] = $possibly_new_values[$i];
+    //     }
+    // }
 
-    if($from != null){
-        $from["editType"] = $editType;
-        $to["editType"] = $editType;
-        insert_editPendingTable($topicname, $whatId, $from, $to);
-    }
+    // echo "<pre>".print_r($from)."</pre><br/><br/>";
+    // echo "<pre>".print_r($to)."</pre>";
+
+    // if($from != null){
+    //     $from["editType"] = $editType;
+    //     $to["editType"] = $editType;
+    //     // insert_editPendingTable($topicname, $whatId, $from, $to);
+    // }
 }
 
 function edit_linkLists($category, $topicname, $id, $title, $link){

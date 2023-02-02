@@ -88,7 +88,6 @@ The end goal of this platform is to effectively link resources to "complex" topi
 |/.topic/ | ./ | php html card modules files (seperated files that are included in `topic.php` `create.php` `edit.php`) 
 | | ./modules/ | for `topic.php` |
 |/.create/ |  | `(need to be recoded)`. Provides functionality for `create.php` `edit.php` |
-| <small>/*AMA*/</small> | | <small>*temp static website for speedstor.net, sorry :)* </small>|
 | /api/ | | temporary location for things that are supposed to be from a cdn |
 | <small>/css/</small> | | <small>css files</small> |
 | /feedbackPages/ | | Basically, are error pages. Users are redirected to pages here if something unexpected happens |

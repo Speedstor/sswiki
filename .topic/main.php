@@ -25,7 +25,7 @@
                         echo "<h2>Site error!! Sorry for the inconvinence</h2>";
                     }else{
                         if(count($data["general"]) > 0){
-                            include $_SERVER['DOCUMENT_ROOT']."/.topic/modules/general.php";
+                            include $_SERVER['DOCUMENT_ROOT']."/.topic/modules/web-lists/general.php";
                             echo '<div class="divider"></div>';
                         }
                     }
@@ -50,7 +50,7 @@
 
                 <?php
                     if(count($data["deepDive"]) > 0){
-                        include $_SERVER['DOCUMENT_ROOT']."/.topic/modules/deepDive.php";
+                        include $_SERVER['DOCUMENT_ROOT']."/.topic/modules/web-lists/deepDive.php";
                         echo '<div class="divider"></div>';
                     }
                 ?>

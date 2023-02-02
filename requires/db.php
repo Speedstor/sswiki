@@ -148,9 +148,9 @@ function insertDB_common_siteTable($topicname, $type, $title, $mainlink, $pictur
 
     $sql = 'INSERT INTO '.$topicname.'_'.$type.'(title, whatId, main_link, picture_link, sitemap_json, is_book, rating_id) VALUES 
                                                 ("'.$title.'", "'.$whatId_firstPart.'", "'.$mainlink.'", '.$picturelink.', "'.str_replace("\"", "\\\"", $siteMapJson).'", '.$is_book.', '.$rating_id.');';
-    echo "\n";
-    echo $sql;
-    echo "\n";
+    // echo "\n";
+    // echo $sql;
+    // echo "\n";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql))  return mysqli_error($conn);
 
