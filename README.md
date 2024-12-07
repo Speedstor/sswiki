@@ -65,7 +65,6 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - **only for the search page**, after human generated ssWiki "content"
     - Exception/Edge cases: if it is a company name, we should not have human gerated ssWiki pages, and the company website should go first
   - the concept now is just google but with mainly link wiki pages instead
-  - 
 - P2P/onion site
   - allow the server to be distributed
   - anyone can download the whole database
@@ -75,10 +74,10 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - And how to integrate with P2P/onion site
 - Tinder for peer study partners
 - timeline for learning (accountability)
-- Chaos mode
-  - A youtube like recommendation system, where the most entertaining videos are suggested
-  - Take away the structure to make people feel free and entertained
-    - like a movie, there just one thing after the other, not like steps and boring
+- ~~Chaos mode~~
+  - ~~A youtube-like recommendation system, where the most entertaining videos are suggested~~
+  - ~~Take away the structure to make people feel free and entertained~~
+    - ~~like a movie, there just one thing after the other, not like steps and boring~~
 - ssMedia
   - a place for people to upload their new content on learning
   - our recommendation engine should not be biased towards this site
@@ -87,9 +86,6 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - but we do not depend on other sites openess to grow open-source content for learning
   - our platform will only allow people to upload ten 2-hour videos, and publish five
     - If they get more than 200 likes, or 2k views, on 3 of the videos, they get to upload five more, and publish five more.
-- Kanban board
-  - learn about github's Kanban board, can use theirs
-  - a place to jot down new ideas, keep track of development progess
 <br/>
 
 ## :blue_book: Brief Documentation
