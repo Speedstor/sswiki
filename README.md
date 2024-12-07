@@ -85,6 +85,8 @@ The end goal of this platform is to effectively link resources to "complex" topi
     - should retain competition, and be monitored so that there is little bias in the process of having our own media portal
   - the ideal is that we will still reroute traffic to other sites if they have better content
   - but we do not depend on other sites openess to grow open-source content for learning
+  - our platform will only allow people to upload ten 2-hour videos, and publish five
+    - If they get more than 200 likes, or 2k views, on 3 of the videos, they get to upload five more, and publish five more.
 - Kanban board
   - learn about github's Kanban board, can use theirs
   - a place to jot down new ideas, keep track of development progess
