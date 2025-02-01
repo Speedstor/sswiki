@@ -88,6 +88,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
     - If they get more than 200 likes, or 2k views, on 3 of the videos, they get to upload five more, and publish five more.
 <br/>
 
+## Problem it solves
+- engineering information on Google is unreliable but useful.
+
 ## :blue_book: Brief Documentation
 
 ### Directory Structure
