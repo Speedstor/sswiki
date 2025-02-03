@@ -91,6 +91,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
 ## Thoughts
 - Problem that this solves: engineering information on Google is unreliable but useful.
 - We want to promote Wikipedia, while adding to it by being a neighboring site
+- Why does Wikipedia still not have full credibility, and how could it increase its quality, so that it is?
+  - Is it true that someone will trust something like "New York Times" more than Wikipedia?
+  - Is it true someone will trust YouTube Video more than wikipedia?
 
 <br/>
 
