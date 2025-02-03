@@ -90,7 +90,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
 
 ## Thoughts
 - Problem that this solves: engineering information on Google is unreliable but useful.
-- We want to promote Wikipedia, while adding to it by being a neighboring sight
+- We want to promote Wikipedia, while adding to it by being a neighboring site
+
+<br/>
 
 ## :blue_book: Brief Documentation
 
