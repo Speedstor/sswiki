@@ -88,8 +88,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
     - If they get more than 200 likes, or 2k views, on 3 of the videos, they get to upload five more, and publish five more.
 <br/>
 
-## Problem it solves
-- engineering information on Google is unreliable but useful.
+## Thoughts
+- Problem that this solves: engineering information on Google is unreliable but useful.
+- We want to promote Wikipedia, while adding to it by being a neighboring sight
 
 ## :blue_book: Brief Documentation
 
