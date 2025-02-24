@@ -65,6 +65,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - **only for the search page**, after human generated ssWiki "content"
     - Exception/Edge cases: if it is a company name, we should not have human gerated ssWiki pages, and the company website should go first
   - the concept now is just google but with mainly link wiki pages instead
+- structured information vs unstructured information (both supported)
+  - structured information (list of databses under each category, each catgeory have a certain structure)
+  - unstructured information (inspiration from reels, and shorts scrolling, people do remember memes and repetive things on that format)
 - P2P/onion site
   - allow the server to be distributed
   - anyone can download the whole database
