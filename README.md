@@ -75,8 +75,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - figure out how to update features (CI: continuous integration?)
 - Add a way for a voting system on feature changes (both what to work on / and what is accepted)
   - And how to integrate with P2P/onion site
-- Tinder for peer study partners
-- timeline for learning (accountability)
+- Shaping the Learner
+  - lock content that have obvious prerequisite, and can be unlocked with very basic questions. Such as the `:qa!` test for enabling vim mode
+  - timeline for learning (accountability) / study syllabus
 - ~~Chaos mode~~
   - ~~A youtube-like recommendation system, where the most entertaining videos are suggested~~
   - ~~Take away the structure to make people feel free and entertained~~
