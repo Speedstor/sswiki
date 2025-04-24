@@ -90,6 +90,7 @@ The end goal of this platform is to effectively link resources to "complex" topi
   - but we do not depend on other sites openess to grow open-source content for learning
   - our platform will only allow people to upload ten 2-hour videos, and publish five
     - If they get more than 200 likes, or 2k views, on 3 of the videos, they get to upload five more, and publish five more.
+  - examine users progress either in engineering output or theoretically expanded ideas. Tune resources to help with user's understanding 
 <br/>
 
 ## Thoughts
