@@ -48,6 +48,20 @@
 The end goal of this platform is to effectively link resources to "complex" topics -- e.g. `quantum physics`, `ctf`, `RISC-V`... But let's not get ahead of ourselves, the platform will start with topics along the lines of `how to code`, `javascript`... The justification of this effort is to make a specialized place on the web for learning practical skills and concepts. The problem with google is that it is almost entirely guided by machines only, and for complex topics, it isn't enough. 
 <br/><br/>
 
+## Existing Solutions
+- University Dipolmas & its Major's Tracks
+- [Wikipedia Outlines](https://en.wikipedia.org/wiki/Wikipedia:Contents/Outlines#Technology_and_applied_sciences)
+- [Khan Academy](https://www.khanacademy.org/)
+- [Brilliant](https://brilliant.org/)
+- [tiddlyhost](https://tiddlyhost.com/explore)
+- [Duolingo](https://www.duolingo.com/)
+- [Lemmy](https://join-lemmy.org/)
+- [mastodon](https://mastodon.social/explore)
+- reddit searches like ["Courses/Books to get started on _____"](https://www.reddit.com/r/chipdesign/comments/1cut1nu/coursesbooks_to_get_started_on_ic_design/)
+- youtube tutorials like [this one](https://www.youtube.com/watch?v=1gir2R7G9ws&list=PLWms45O3n--6TvZmtFHaCWRZwEqnz2MHa) and [this one](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
+
+<br/><br/>
+
 ## :golf: Roadmap
 
 - Finish basic functionalities of the website
@@ -78,6 +92,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
 - Shaping the Learner
   - lock content that have obvious prerequisite, and can be unlocked with very basic questions. Such as the `:qa!` test for enabling vim mode
   - timeline for learning (accountability) / study syllabus
+- Answers the desire of "I want to ______"
+  - right now, if "I want to <u>build a rocket</u>" , study Aerospace Engineering as my major, and I will be good to go
+  - How can I do that without going to university?
 - ~~Chaos mode~~
   - ~~A youtube-like recommendation system, where the most entertaining videos are suggested~~
   - ~~Take away the structure to make people feel free and entertained~~
