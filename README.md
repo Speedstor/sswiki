@@ -60,6 +60,13 @@ The end goal of this platform is to effectively link resources to "complex" topi
 - reddit searches like ["Courses/Books to get started on _____"](https://www.reddit.com/r/chipdesign/comments/1cut1nu/coursesbooks_to_get_started_on_ic_design/)
 - youtube tutorials like [this one](https://www.youtube.com/watch?v=1gir2R7G9ws&list=PLWms45O3n--6TvZmtFHaCWRZwEqnz2MHa) and [this one](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
 
+<br/>
+
+- incomplete attempts
+  - [learn-anything/learn-anything](https://github.com/learn-anything/learn-anything)
+  - [learn-awesome/learn](https://github.com/learn-awesome/learn)
+  - [roadmap.sh](https://roadmap.sh/)
+
 <br/><br/>
 
 ## :golf: Roadmap
