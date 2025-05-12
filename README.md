@@ -104,6 +104,9 @@ The end goal of this platform is to effectively link resources to "complex" topi
 - Answers the desire of "I want to ______"
   - right now, if "I want to <u>build a rocket</u>" , study Aerospace Engineering as my major, and I will be good to go
   - How can I do that without going to university?
+- Personal timeline
+  - timeline of everything you learned and where you learned them
+  - the software can then parse a learning pathway for other's on a selected path on one of the subjects you delve into
 - ~~Chaos mode~~
   - ~~A youtube-like recommendation system, where the most entertaining videos are suggested~~
   - ~~Take away the structure to make people feel free and entertained~~
