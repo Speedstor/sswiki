@@ -61,6 +61,7 @@ The end goal of this platform is to effectively link resources to "complex" topi
 - youtube tutorials like [this one](https://www.youtube.com/watch?v=1gir2R7G9ws&list=PLWms45O3n--6TvZmtFHaCWRZwEqnz2MHa) and [this one](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
 - Github curated lists like [this one](https://github.com/ajouatom/canbus-tools)
 - Open-source Project's Documentation like [zephyr](https://docs.zephyrproject.org/latest/hardware/peripherals/can/index.html), [tinygrad](https://mesozoic-egg.github.io/tinygrad-notes/)
+- creating inspiration like by [BPS.space](https://www.youtube.com/bpsspace), [thingiverse](https://www.thingiverse.com/)
 
 <br/>
 
